@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EE17F8C2-EDCD-4686-BF89-19799FE43130}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>SampleApiDllCSharpWrapper</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\Sample\ApiDllCSharpWrapper\Dependencies.props" />
+    <Import Project="..\..\VisualStudioPropertyPages\GenICam\GenICam310.props" />
+    <Import Project="..\..\VisualStudioPropertyPages\CalibrationWrapper\CalibrationWrapperd.props" />
+    <Import Project="..\..\VisualStudioPropertyPages\Test\ApiDllTestd.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\VisualStudioPropertyPages\GenICam\GenICam310.props" />
+    <Import Project="..\..\VisualStudioPropertyPages\CalibrationWrapper\CalibrationWrapper.props" />
+    <Import Project="..\..\VisualStudioPropertyPages\Test\ApiDllTest.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <DisableSpecificWarnings>4251;4091;4267;4793;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <CompileAsWinRT>false</CompileAsWinRT>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <DisableSpecificWarnings>4251;4091;4267;4793;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CommonFunctions.cpp" />
+    <ClCompile Include="ImgTCSharpWrapper.cpp" />
+    <ClCompile Include="Ranger3CSharpWrapper.cpp" />
+    <ClCompile Include="Stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\CLAllSerial_MD_VC120_v3_1.lib" />
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\CLProtocol_MD_VC120_v3_1.lib" />
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\clsercom.lib" />
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\FirmwareUpdate_MD_VC120_v3_1.lib" />
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\GCBase_MD_VC120_v3_1.lib" />
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\GenApi_MD_VC120_v3_1.lib" />
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\GenCP_MD_VC120_v3_1.lib" />
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\log4cpp_MD_VC120_v3_1.lib" />
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\Log_MD_VC120_v3_1.lib" />
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\XmlParser_MD_VC120_v3_1.lib" />
+    <Library Include="..\x64\Debug\GenIRanger.lib" />
+    <Library Include="..\x64\Debug\SampleApiDll.lib" />
+    <Library Include="..\x64\Debug\SampleCalibrationWrapper.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\x64\Debug\GenIRanger.pdb" />
+    <None Include="..\x64\Debug\SampleApiDll.pdb" />
+    <None Include="..\x64\Debug\SampleCalibrationWrapper.pdb" />
+    <None Include="..\x64\Debug\SampleCommon.pdb" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

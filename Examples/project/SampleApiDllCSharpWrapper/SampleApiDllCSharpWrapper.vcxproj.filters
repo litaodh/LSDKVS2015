@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="库文件">
+      <UniqueIdentifier>{012d00c5-e00d-49cf-bdd8-fe37225005de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="调试文件">
+      <UniqueIdentifier>{26fce2c7-d01a-4e0f-8977-a38db26bec5b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssemblyInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ImgTCSharpWrapper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ranger3CSharpWrapper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonFunctions.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="app.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\CLAllSerial_MD_VC120_v3_1.lib">
+      <Filter>库文件</Filter>
+    </Library>
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\CLProtocol_MD_VC120_v3_1.lib">
+      <Filter>库文件</Filter>
+    </Library>
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\clsercom.lib">
+      <Filter>库文件</Filter>
+    </Library>
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\FirmwareUpdate_MD_VC120_v3_1.lib">
+      <Filter>库文件</Filter>
+    </Library>
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\GCBase_MD_VC120_v3_1.lib">
+      <Filter>库文件</Filter>
+    </Library>
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\GenApi_MD_VC120_v3_1.lib">
+      <Filter>库文件</Filter>
+    </Library>
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\GenCP_MD_VC120_v3_1.lib">
+      <Filter>库文件</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\GenIRanger.lib">
+      <Filter>库文件</Filter>
+    </Library>
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\Log_MD_VC120_v3_1.lib">
+      <Filter>库文件</Filter>
+    </Library>
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\log4cpp_MD_VC120_v3_1.lib">
+      <Filter>库文件</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\SampleApiDll.lib">
+      <Filter>库文件</Filter>
+    </Library>
+    <Library Include="..\..\..\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64\XmlParser_MD_VC120_v3_1.lib">
+      <Filter>库文件</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\SampleCalibrationWrapper.lib">
+      <Filter>库文件</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\x64\Debug\GenIRanger.pdb">
+      <Filter>调试文件</Filter>
+    </None>
+    <None Include="..\x64\Debug\SampleApiDll.pdb">
+      <Filter>调试文件</Filter>
+    </None>
+    <None Include="..\x64\Debug\SampleCalibrationWrapper.pdb">
+      <Filter>调试文件</Filter>
+    </None>
+    <None Include="..\x64\Debug\SampleCommon.pdb">
+      <Filter>调试文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>

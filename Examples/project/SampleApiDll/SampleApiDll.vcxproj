@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E89C1CBC-F2F9-488B-8B65-CE74FC5312E1}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>SampleApiDll</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\VisualStudioPropertyPages\tinyxml2\tinyxml2.props" />
+    <Import Project="..\..\VisualStudioPropertyPages\GenICam\GenICam310.props" />
+    <Import Project="..\..\VisualStudioPropertyPages\CalibrationWrapper\CalibrationWrapperd.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\VisualStudioPropertyPages\tinyxml2\tinyxml2.props" />
+    <Import Project="..\..\VisualStudioPropertyPages\GenICam\GenICam310.props" />
+    <Import Project="..\..\VisualStudioPropertyPages\CalibrationWrapper\CalibrationWrapper.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetExt>.dll</TargetExt>
+    <IncludePath>$(SolutionDir)\Examples\Sample\CalibrationWrapper\Ranger3RuntimeCalibration\include\;$(SolutionDir)\Examples\Sample\CalibrationWrapper\;$(SolutionDir)\Dependencies\tinyxml2;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64;$(SolutionDir)\Examples\project\x64\Debug;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)\Examples\Sample\CalibrationWrapper\Ranger3RuntimeCalibration\include\;$(SolutionDir)\Examples\Sample\CalibrationWrapper\;$(SolutionDir)\Dependencies\tinyxml2;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\lib\Win64_x64;$(SolutionDir)\Examples\project\x64\Debug;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_CRT_SECURE_NO_WARNINGS;LOG_ONLY;DLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\include;$(SolutionDir)\Examples\GenIRanger\public;$(SolutionDir)\Examples\Sample\Common\public;$(SolutionDir)\Examples\GenIRanger\private</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4244;4273;4091;4267;4251;4752;4793;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <OpenMPSupport>true</OpenMPSupport>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(SolutionDir)$(Platform)\$(Configuration)\GenIRanger.lib;$(SolutionDir)$(Platform)\$(Configuration)\SampleCommon.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;LOG_ONLY;DLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Dependencies\GenICam\GenICam_V3_1_0\library\CPP\include;$(SolutionDir)\Examples\GenIRanger\public;$(SolutionDir)\Examples\Sample\Common\public;$(SolutionDir)\Examples\GenIRanger\private</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4244;4273;4091;4267;4251;4752;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(SolutionDir)$(Platform)\$(Configuration)\GenIRanger.lib;$(SolutionDir)$(Platform)\$(Configuration)\SampleCommon.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Dependencies\tinyxml2\tinyxml2.cpp" />
+    <ClCompile Include="..\..\Sample\ApiDll\BufferInfoVLB.cpp" />
+    <ClCompile Include="..\..\Sample\ApiDll\CustomerLog.cpp" />
+    <ClCompile Include="..\..\Sample\ApiDll\DeviceConnection.cpp" />
+    <ClCompile Include="..\..\Sample\ApiDll\EnumSelectorEntries.cpp" />
+    <ClCompile Include="..\..\Sample\ApiDll\ImageTable.cpp" />
+    <ClCompile Include="..\..\Sample\ApiDll\Parameters.cpp" />
+    <ClCompile Include="..\..\Sample\ApiDll\PartInfoCollection.cpp" />
+    <ClCompile Include="..\..\Sample\ApiDll\PFNC.cpp" />
+    <ClCompile Include="..\..\Sample\ApiDll\Ranger3.cpp" />
+    <ClCompile Include="..\..\Sample\ApiDll\Ranger3Callback.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Sample\ApiDll\BufferInfoVLB.h" />
+    <ClInclude Include="..\..\Sample\ApiDll\CustomerLog.h" />
+    <ClInclude Include="..\..\Sample\ApiDll\DeviceConnection.h" />
+    <ClInclude Include="..\..\Sample\ApiDll\EnumSelectorEntries.h" />
+    <ClInclude Include="..\..\Sample\ApiDll\ImageTable.h" />
+    <ClInclude Include="..\..\Sample\ApiDll\Parameters.h" />
+    <ClInclude Include="..\..\Sample\ApiDll\PartInfoCollection.h" />
+    <ClInclude Include="..\..\Sample\ApiDll\PFNC.h" />
+    <ClInclude Include="..\..\Sample\ApiDll\Ranger3.h" />
+    <ClInclude Include="..\..\Sample\ApiDll\Typedef.h" />
+    <ClInclude Include="..\..\Sample\Version.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

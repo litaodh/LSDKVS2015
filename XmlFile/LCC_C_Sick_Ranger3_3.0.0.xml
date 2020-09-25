@@ -1,0 +1,450 @@
+<?xml version="1.0" ?>
+<Category Name="root">
+    <Category Name="DeviceInfo">
+        <Feature Name="DeviceID" FeatureType="String">
+            <DefaultValue>TestID</DefaultValue>
+            <ToolTip>DeviceID</ToolTip>
+            <Description>ID of Device</Description>
+            <DisplayName>DeviceID</DisplayName>
+            <Visibility>Beginner</Visibility>
+            <AccessMode>RO</AccessMode>
+            <VenderFeatureName>DeviceInfo</VenderFeatureName>
+            <IsInit>False</IsInit>
+        </Feature>
+    </Category>
+
+    <Category Name="General">
+	
+        <Feature Name="Width" FeatureType="Int">
+			<Max>2560</Max>
+			<Min>128</Min>
+			<Inc>8</Inc>
+			<DefaultValue>2560</DefaultValue>
+			<ToolTip>Width</ToolTip>
+			<Description>Image Width</Description>
+			<DisplayName>Width</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>Width_RegionSelector_Region1</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="Height" FeatureType="Int">
+			<Max>63983</Max>
+			<Min>2</Min>
+			<Inc>1</Inc>
+			<DefaultValue>200</DefaultValue>
+			<ToolTip>Height</ToolTip>
+			<Description>Image Height</Description>
+			<DisplayName>Height</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>Height_RegionSelector_Scan3dExtraction1</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="OffsetY" FeatureType="Int">
+			<Max>632</Max>
+			<Min>0</Min>
+			<Inc>4</Inc>
+			<DefaultValue>0</DefaultValue>
+			<ToolTip>OffsetY</ToolTip>
+			<Description>OffsetY</Description>
+			<DisplayName>OffsetY</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>OffsetY</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="OffsetX" FeatureType="Int">
+			<Max>632</Max>
+			<Min>0</Min>
+			<Inc>4</Inc>
+			<DefaultValue>0</DefaultValue>
+			<ToolTip>OffsetX</ToolTip>
+			<Description>OffsetX</Description>
+			<DisplayName>OffsetX</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>OffsetX</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+
+        <Feature Name="PixelFormat" FeatureType="Enum">
+            <EnumEntry EnumName="Mono8">0x01080001</EnumEntry>
+            <EnumEntry EnumName="Mono16">0x01100007</EnumEntry>
+            <DefaultValue>0x01100007</DefaultValue>
+            <ToolTip>PixelFormat</ToolTip>
+            <Description>Pixel Format</Description>
+            <DisplayName>Pixel Format</DisplayName>
+            <Visibility>Beginner</Visibility>
+            <AccessMode>RW</AccessMode>
+			<VenderFeatureName>PixelFormat_ComponentSelector_Range_RegionSelector_Scan3dExtraction1</VenderFeatureName>
+            <IsInit>False</IsInit>
+        </Feature>
+	
+		<Feature Name="AcquisitionLineRate" FeatureType="Double">
+			<Max>1990.917</Max>
+			<Min>1</Min>
+			<Inc>0</Inc>
+			<DefaultValue>1000</DefaultValue>
+			<ToolTip>AcquisitionLineRate</ToolTip>
+			<Description>Acquisition Line Rate</Description>
+			<DisplayName>Acquisition Line Rate</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>AcquisitionLineRate</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="AcquisitionFrameRate" FeatureType="Double">
+			<Max>55.75</Max>
+			<Min>1</Min>
+			<Inc>0</Inc>
+			<DefaultValue>30</DefaultValue>
+			<ToolTip>AcquisitionFrameRate</ToolTip>
+			<Description>AcquisitionFrameRate</Description>
+			<DisplayName>AcquisitionFrameRate</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>AcquisitionFrameRate</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="ExposureTime" FeatureType="Double">
+			<Max>33322.5</Max>
+			<Min>0</Min>
+			<Inc>0</Inc>
+			<DefaultValue>500</DefaultValue>
+			<ToolTip>ExposureTime</ToolTip>
+			<Description>ExposureTime</Description>
+			<DisplayName>ExposureTime</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>ExposureTime_RegionSelector_Region1</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_DeviceTemperature" FeatureType="Double">
+			<Max>33322.5</Max>
+			<Min>0</Min>
+			<Inc>0</Inc>
+			<DefaultValue>50</DefaultValue>
+			<ToolTip>DeviceTemperature</ToolTip>
+			<Description>DeviceTemperature</Description>
+			<DisplayName>DeviceTemperature</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>DeviceTemperature</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="TriggerMode" FeatureType="Enum">
+			<EnumEntry EnumName="Off">0</EnumEntry>
+			<EnumEntry EnumName="On">1</EnumEntry>
+			<DefaultValue>0</DefaultValue>
+			<ToolTip>Trigger Mode</ToolTip>
+			<Description>Controls whether or not the selected trigger is active.</Description>
+			<DisplayName>Trigger Mode</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>TriggerMode</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_ReflectanceEnable" FeatureType="Boolen">
+			<DefaultValue>True</DefaultValue>
+			<ToolTip>SICK_ReflectanceEnable</ToolTip>
+			<Description>SICK_ReflectanceEnable</Description>
+			<DisplayName>SICK_ReflectanceEnable</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>ComponentEnable</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_DetectionThreshold" FeatureType="Int">
+			<Max>632</Max>
+			<Min>0</Min>
+			<Inc>4</Inc>
+			<DefaultValue>20</DefaultValue>
+			<ToolTip>SICK_DetectionThreshold</ToolTip>
+			<Description>SICK_DetectionThreshold</Description>
+			<DisplayName>SICK_DetectionThreshold</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>DetectionThreshold</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_WamSize" FeatureType="Enum">
+			<EnumEntry EnumName="Normal">0</EnumEntry>
+			<EnumEntry EnumName="Small">1</EnumEntry>
+			<EnumEntry EnumName="Large">2</EnumEntry>
+			<DefaultValue>0</DefaultValue>
+			<ToolTip>SICK_WamSize</ToolTip>
+			<Description>SICK_WamSize.</Description>
+			<DisplayName>SICK_WamSize</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>WamSize</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_SearchMode3D" FeatureType="Enum">
+			<EnumEntry EnumName="GlobalMax">0</EnumEntry>
+			<EnumEntry EnumName="FirstLocalMax">1</EnumEntry>
+			<DefaultValue>0</DefaultValue>
+			<ToolTip>SICK_SearchMode3D</ToolTip>
+			<Description>SICK_SearchMode3D.</Description>
+			<DisplayName>SICK_SearchMode3D</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>SearchMode3D</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_DeviceLinkThroughputLimit" FeatureType="Int">
+			<Max>632</Max>
+			<Min>0</Min>
+			<Inc>4</Inc>
+			<DefaultValue>118750000</DefaultValue>
+			<ToolTip>SICK_DeviceLinkThroughputLimit</ToolTip>
+			<Description>SICK_DeviceLinkThroughputLimit</Description>
+			<DisplayName>SICK_DeviceLinkThroughputLimit</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>DeviceLinkThroughputLimit</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_DeviceLinkHeartbeatTimeout" FeatureType="Int">
+			<Max>632</Max>
+			<Min>0</Min>
+			<Inc>4</Inc>
+			<DefaultValue>3000</DefaultValue>
+			<ToolTip>SICK_DeviceLinkHeartbeatTimeout</ToolTip>
+			<Description>SICK_DeviceLinkHeartbeatTimeout</Description>
+			<DisplayName>SICK_DeviceLinkHeartbeatTimeout</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>DeviceLinkHeartbeatTimeout</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="PixelFormat" FeatureType="Enum">
+	    	<EnumEntry EnumName="Mono12p">0x010C0047</EnumEntry>
+			<EnumEntry EnumName="Coord3D_C12p">0x010C00DA</EnumEntry>
+            <EnumEntry EnumName="Mono16">0x01100007</EnumEntry>
+			<EnumEntry EnumName="Coord3D_C16">0x011000B8</EnumEntry>
+            <DefaultValue>0x010C00DA</DefaultValue>
+            <ToolTip>PixelFormat</ToolTip>
+            <Description>Pixel Format</Description>
+            <DisplayName>Pixel Format</DisplayName>
+            <Visibility>Beginner</Visibility>
+            <AccessMode>RW</AccessMode>
+			<VenderFeatureName>PixelFormat</VenderFeatureName>
+            <IsInit>False</IsInit>
+        </Feature>
+		
+		<Feature Name="SICK_TriggerActivation" FeatureType="Enum">
+			<EnumEntry EnumName="RisingEdge">0</EnumEntry>
+			<EnumEntry EnumName="LevelHigh">1</EnumEntry>
+			<DefaultValue>0</DefaultValue>
+			<ToolTip>SICK_TriggerActivation</ToolTip>
+			<Description>SICK_TriggerActivation.</Description>
+			<DisplayName>SICK_TriggerActivation</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>TriggerActivation</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_TriggerSelector" FeatureType="Enum">
+			<EnumEntry EnumName="LineStart">0</EnumEntry>
+			<EnumEntry EnumName="FrameStart">1</EnumEntry>
+			<DefaultValue>0</DefaultValue>
+			<ToolTip>SICK_TriggerSelector</ToolTip>
+			<Description>SICK_TriggerSelector.</Description>
+			<DisplayName>SICK_TriggerSelector</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>TriggerSelector</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_ComponentSelector" FeatureType="Enum">
+			<EnumEntry EnumName="Intensity">0</EnumEntry>
+			<EnumEntry EnumName="Range">1</EnumEntry>
+			<EnumEntry EnumName="Reflectance">2</EnumEntry>
+			<DefaultValue>0</DefaultValue>
+			<ToolTip>SICK_ComponentSelector</ToolTip>
+			<Description>SICK_ComponentSelector.</Description>
+			<DisplayName>SICK_ComponentSelector</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>ComponentSelector</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_MultiSlopeMode" FeatureType="Enum">
+			<EnumEntry EnumName="Off">0</EnumEntry>
+			<EnumEntry EnumName="PresetSoft">1</EnumEntry>
+			<EnumEntry EnumName="PresetMedium">2</EnumEntry>
+			<EnumEntry EnumName="PresetAggressive">3</EnumEntry>
+			<DefaultValue>0</DefaultValue>
+			<ToolTip>SICK_MultiSlopeMode</ToolTip>
+			<Description>SICK_MultiSlopeMode.</Description>
+			<DisplayName>SICK_MultiSlopeMode</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>MultiSlopeMode</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_EncoderDivider" FeatureType="Int">
+			<Max>632</Max>
+			<Min>0</Min>
+			<Inc>4</Inc>
+			<DefaultValue>1</DefaultValue>
+			<ToolTip>SICK_EncoderDivider</ToolTip>
+			<Description>SICK_EncoderDivider</Description>
+			<DisplayName>SICK_EncoderDivider</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>EncoderDivider</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_EventNotification" FeatureType="Enum">
+			<EnumEntry EnumName="Off">0</EnumEntry>
+			<EnumEntry EnumName="On">1</EnumEntry>
+			<DefaultValue>0</DefaultValue>
+			<ToolTip>SICK_EventNotification</ToolTip>
+			<Description>SICK_EventNotification.</Description>
+			<DisplayName>SICK_EventNotification</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>EventNotification</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_GevSCPD" FeatureType="Int">
+			<Max>632</Max>
+			<Min>0</Min>
+			<Inc>4</Inc>
+			<DefaultValue>1</DefaultValue>
+			<ToolTip>SICK_GevSCPD</ToolTip>
+			<Description>SICK_GevSCPD</Description>
+			<DisplayName>SICK_GevSCPD</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>GevSCPD</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_TestPattern" FeatureType="Enum">
+			<EnumEntry EnumName="Off">0</EnumEntry>
+			<EnumEntry EnumName="GreyHorizontalRampMoving">1</EnumEntry>
+			<DefaultValue>0</DefaultValue>
+			<ToolTip>SICK_TestPattern</ToolTip>
+			<Description>SICK_TestPattern.</Description>
+			<DisplayName>SICK_TestPattern</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>TestPattern</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_ReflectanceFilter" FeatureType="Boolen">
+			<DefaultValue>True</DefaultValue>
+			<ToolTip>SICK_ReflectanceFilter</ToolTip>
+			<Description>SICK_ReflectanceFilter</Description>
+			<DisplayName>SICK_ReflectanceFilter</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>ReflectanceFilter</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_DeviceScanType" FeatureType="Enum">
+			<EnumEntry EnumName="Linescan3D">0</EnumEntry>
+			<EnumEntry EnumName="AreaScan">1</EnumEntry>
+			<DefaultValue>0</DefaultValue>
+			<ToolTip>SICK_DeviceScanType</ToolTip>
+			<Description>SICK_DeviceScanType.</Description>
+			<DisplayName>SICK_DeviceScanType</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>DeviceScanType</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_AcquisitionMode" FeatureType="Enum">
+			<EnumEntry EnumName="Continuous">0</EnumEntry>
+			<EnumEntry EnumName="SingleFrame">1</EnumEntry>
+			<DefaultValue>0</DefaultValue>
+			<ToolTip>SICK_AcquisitionMode</ToolTip>
+			<Description>SICK_AcquisitionMode.</Description>
+			<DisplayName>SICK_AcquisitionMode</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>AcquisitionMode</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_MultiSlopeKneePointCount" FeatureType="Int">
+			<Max>1</Max>
+			<Min>1</Min>
+			<Inc>1</Inc>
+			<DefaultValue>1</DefaultValue>
+			<ToolTip>SICK_MultiSlopeKneePointCount</ToolTip>
+			<Description>SICK_MultiSlopeKneePointCount</Description>
+			<DisplayName>SICK_MultiSlopeKneePointCount</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>MultiSlopeKneePointCount</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_LineSelector" FeatureType="Enum">
+			<EnumEntry EnumName="RS422A">0</EnumEntry>
+			<EnumEntry EnumName="RS422B">1</EnumEntry>
+			<EnumEntry EnumName="FrameTrig">2</EnumEntry>
+			<DefaultValue>0</DefaultValue>
+			<ToolTip>SICK_LineSelector</ToolTip>
+			<Description>SICK_LineSelector.</Description>
+			<DisplayName>SICK_LineSelector</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>LineSelector</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_LineFormat" FeatureType="Enum">
+			<EnumEntry EnumName="RS422">0</EnumEntry>
+			<EnumEntry EnumName="Line24V">1</EnumEntry>
+			<DefaultValue>0</DefaultValue>
+			<ToolTip>SICK_LineFormat</ToolTip>
+			<Description>SICK_LineFormat.</Description>
+			<DisplayName>SICK_LineFormat</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>LineFormat</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+		
+		<Feature Name="SICK_Image2D" FeatureType="Boolen">
+			<DefaultValue>True</DefaultValue>
+			<ToolTip>SICK_Image2D</ToolTip>
+			<Description>SICK_Image2D</Description>
+			<DisplayName>SICK_Image2D</DisplayName>
+			<Visibility>SICK_Image2D</Visibility>
+			<AccessMode>RW</AccessMode>
+			<VenderFeatureName>SICK_Image2D</VenderFeatureName>
+			<IsInit>False</IsInit>
+		</Feature>
+
+    </Category>
+</Category>

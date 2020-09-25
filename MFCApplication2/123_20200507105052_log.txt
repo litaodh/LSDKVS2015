@@ -1,0 +1,10 @@
+[Ranger3Shared::loadCtiFile] : common::Consumer open ok!2020-05-07 10:50:52
+
+
+-----------------------------
+
+[Ranger3Shared] : Close Interfaces.Error: [Ranger3Shared::scanDevice]: No conneted Ranger3 found! Please check the IP or restart the Ranger3 and wait until the device is ready!2020-05-07 10:50:54
+
+
+-----------------------------
+

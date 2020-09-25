@@ -1,0 +1,27 @@
+1、将CalibrationAdapter.h和CalibrationAdapter.cpp添加到工程中
+
+2、在回调函数中获得buffer后，直接对buffer进行如下处理：
+
+std::string calibFile = "cfg.xml";
+const int64_t rectificationWidth = 2560;
+int bufferWidth = pstDisplayImageInfo->stImageProperty.iImageWidth;
+int bufferHeight = pstDisplayImageInfo->stImageProperty.iImageHeight;
+//Initialize the calibration filter. Best to only do once as it is time-consuming. (Need to make a new filter if the buffer changes size).
+//calibrationAdapter::CalibrationFilter* calFilter = new calibrationAdapter::CalibrationFilter(calibFile, bufferHeight, bufferWidth, rectificationWidth /*Rectification Width*/, aoiHeight, aoiOffsetX, aoiOffsetY, true /*include reflectance*/);
+calibrationAdapter::CalibrationFilter* calFilter = 
+	new calibrationAdapter::CalibrationFilter(calibFile, bufferHeight, 
+	bufferWidth, rectificationWidth /*Rectification Width*/, 
+	bufferHeight, 0, 0, true /*include reflectance*/);
+//Create output variables
+float *rangeRect = new float[rectificationWidth*bufferHeight];
+float *reflectanceRect = new float[rectificationWidth*bufferHeight];
+
+calibrationAdapter::WorldRangeTraits wTraits{};
+//Perform calibration and rectification 
+//calFilter->apply(buffer16, part1Info.mPartDataPointer/* nullptr*/, rangeRect, reflectanceRect, wTraits, bufferPath.str());
+calFilter->apply(buffer16, NULL, rangeRect, reflectanceRect, wTraits, bufferPathCalibrate.str());
+
+//You are responsible for the memory management of these variables
+delete rangeRect;
+delete reflectanceRect;//----------修改（有reflectance时，启用这段代码）
+delete calFilter;
